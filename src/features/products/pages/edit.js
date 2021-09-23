@@ -25,14 +25,12 @@ function EditPage() {
     );
   }
 
-  const heading = product
+  const formHeading = product
     ? (
       <Heading>
         Edit&nbsp;
         <b>
-          &quot;
           {product.name}
-          &quot;
         </b>
       </Heading>
     )
@@ -40,7 +38,7 @@ function EditPage() {
 
   return (
     <>
-      {heading}
+      {formHeading}
       <ProductForm product={product} />
     </>
   );

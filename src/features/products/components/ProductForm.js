@@ -83,10 +83,7 @@ const ProductForm = ({ product }) => {
         >
           <TextArea name="description" />
         </FormField>
-        <FormField
-          name="image"
-          label="Image"
-        >
+        <FormField name="image" label="Image">
           <FileInput name="files" multiple={false} accept="image/*" />
         </FormField>
       </Box>

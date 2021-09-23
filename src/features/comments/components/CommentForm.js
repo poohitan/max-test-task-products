@@ -17,12 +17,12 @@ const CommentForm = ({ productId }) => {
   const [formValue, setFormValue] = useState();
   const dispatch = useDispatch();
 
-  const submit = (comment) => {
+  const submit = ({ text }) => {
     dispatch(create({
       id: uuidv4(),
       productId,
+      text,
       createdAt: new Date().toISOString(),
-      ...comment,
     }));
 
     setFormValue({

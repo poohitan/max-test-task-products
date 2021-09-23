@@ -21,10 +21,18 @@ const Comment = ({ id, text, createdAt }) => {
   return (
     <Card direction="column" background="light-1">
       <CardBody fill pad="small">
-        <Paragraph margin="none">{text}</Paragraph>
+        <Paragraph margin="none">
+          {
+            text
+          }
+        </Paragraph>
       </CardBody>
       <CardFooter pad={{ horizontal: 'small' }} background="light-2">
-        <Paragraph size="small" margin="none">{new Date(createdAt).toLocaleString()}</Paragraph>
+        <Paragraph size="small" margin="none">
+          {
+            new Date(createdAt).toLocaleString()
+          }
+        </Paragraph>
         <Button
           icon={<Trash color="red" size="small" />}
           hoverIndicator
