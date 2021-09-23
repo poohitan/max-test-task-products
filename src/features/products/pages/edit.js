@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
@@ -24,6 +24,10 @@ function EditPage() {
       </Paragraph>
     );
   }
+
+  useEffect(() => {
+    document.title = product ? `Edit product "${product.name}"` : 'Create product';
+  }, [id]);
 
   const formHeading = product
     ? (

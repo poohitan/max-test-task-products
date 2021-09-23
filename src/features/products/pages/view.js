@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useParams, Link } from 'react-router-dom';
 import pluralize from 'pluralize';
@@ -18,6 +18,7 @@ import './view.css';
 
 function ViewPage() {
   const { id } = useParams();
+
   const product = useSelector(
     (state) => state.products.find((item) => item.id === id),
   );
@@ -34,6 +35,10 @@ function ViewPage() {
       </Paragraph>
     );
   }
+
+  useEffect(() => {
+    document.title = `Product "${product.name}"`;
+  }, []);
 
   const commentsHeading = comments.length
     ? pluralize('Comment', comments.length, true)

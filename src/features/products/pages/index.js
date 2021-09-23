@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 
 import {
@@ -11,6 +11,10 @@ import Product from '../components/Product';
 
 function IndexPage() {
   const productsList = useSelector((state) => state.products);
+
+  useEffect(() => {
+    document.title = 'Product List';
+  }, []);
 
   return (
     <div>
